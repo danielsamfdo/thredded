@@ -1,3 +1,9 @@
+# Master
+
+## Added
+
+* Jump to the first unread post when navigating to a topic.
+
 # v0.14.4
 
 ## Added

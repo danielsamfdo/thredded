@@ -37,7 +37,11 @@ module Thredded
     end
 
     def path
-      Thredded::UrlsHelper.topic_path(@topic, page: @read_state.page)
+      Thredded::UrlsHelper.topic_path(
+        @topic,
+        page: @read_state.first_unread_post_page || @read_state.page,
+        anchor: ("post_#{@read_state.first_unread_post_id}" if @read_state.first_unread_post_id)
+      )
     end
   end
 end
