@@ -40,7 +40,7 @@ module Thredded
       Thredded::UrlsHelper.topic_path(
         @topic,
         page: @read_state.first_unread_post_page || @read_state.page,
-        anchor: ("post_#{@read_state.first_unread_post_id}" if @read_state.first_unread_post_id)
+        anchor: ('unread' if @read_state.first_unread_post_page)
       )
     end
   end

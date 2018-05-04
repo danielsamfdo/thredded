@@ -67,7 +67,7 @@ module Thredded
       def read_states_by_postable_hash(user)
         read_states = reflect_on_association(:user_read_states).klass
           .where(user_id: user.id, postable_id: current_scope.map(&:id))
-          .include_first_unread(posts_scope: Pundit.policy_scope(user, post_class.all))
+          .include_first_unread_page(posts_scope: Pundit.policy_scope(user, post_class.all))
         Thredded::TopicCommon::CachingHash.from_relation(read_states)
       end
 
