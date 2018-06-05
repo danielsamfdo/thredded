@@ -43,5 +43,9 @@ module Thredded
     def thredded_display_name
       to_s
     end
+
+    def marked_for_destruction?
+      return false
+    end
   end
 end
